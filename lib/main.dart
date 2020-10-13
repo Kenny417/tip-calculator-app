@@ -76,6 +76,9 @@ class TipCalculator extends StatelessWidget {
 
 void main() {
   runApp(new MaterialApp(
+    theme: ThemeData(
+      primaryColor: Colors.amber[400]
+    ),
       title: 'Tip Calculator',
       home: new TipCalculator()
   ));
