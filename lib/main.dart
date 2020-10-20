@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 
 class TipCalculator extends StatelessWidget {
   double billAmount = 0.0;
-  double tipPercentage = 0.0;
+  double tipPercentage = 20.0;
+
+
+  String format(double n) {
+    return n.toStringAsFixed(n.truncateToDouble() == n ? 0 : 2);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +49,19 @@ class TipCalculator extends StatelessWidget {
           // Calculate tip and total
           double calculatedTip = billAmount * tipPercentage / 100.0;
           double total = billAmount + calculatedTip;
+          String roundedTip = calculatedTip.toStringAsFixed(2);
+          String roundedTotal = total.toStringAsFixed(2);
+          String formattedTip = format(tipPercentage);
+          String message = '';
+          if (calculatedTip.truncateToDouble() != calculatedTip ) {
+            message = "\n\nConsider rounding the tip up to the nearest whole dollar amount?";
+          }
 
           // Generate dialog
           AlertDialog dialog = new AlertDialog(
-              content: new Text("Tip: \$$calculatedTip \n"
-                  "Total: \$$total")
+              content: new Text("$formattedTip% tip: \$$roundedTip \n"
+                  "Total: \$$roundedTotal "
+                  "$message")
           );
 
           // Show dialog
@@ -77,7 +90,7 @@ class TipCalculator extends StatelessWidget {
 void main() {
   runApp(new MaterialApp(
     theme: ThemeData(
-      primaryColor: Colors.amber[400]
+      primaryColor: Colors.red[400]
     ),
       title: 'Tip Calculator',
       home: new TipCalculator()
