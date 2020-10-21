@@ -1,16 +1,5 @@
 # tip_calc
 
-An app to help calculate tips
+An app to help calculate tips.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I'm not really sure why anyone would actually want to use this app because if you tip 20% it's fairly easy to do the math in your head.  All you have to do is take 10% of the total and double it. For example, 10% of $30 is $3.00 so 20% would be $6.00.
